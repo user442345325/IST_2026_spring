@@ -152,3 +152,8 @@ for score, length, key, plaintext in unique_scored[:10]:
     print(f"  length={length:2d}  key='{key}'  bigram_score={score:.5f}")
     print(f"  preview: {plaintext[:120]}")
     print()
+
+
+best_score, best_length, best_key, best_plaintext = unique_scored[0]
+with open("cracked.txt", "w", encoding="utf-8") as f:
+    f.write(best_plaintext)
